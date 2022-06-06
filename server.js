@@ -41,12 +41,10 @@ app.use('/api', require('./routes/messageRouter'));
 //#endregion
 
 
-const URI = process.env.MONGODB_URL;
-mongoose.connect(URI, {
-    useCreateIndex:true,
-    useFindAndModify:false,
-    useNewUrlParser:true,
-    useUnifiedTopology:true
+
+mongoose.connect("mongodb+srv://Nitesh9609:Nitesh9609@cluster0.fnrsx.mongodb.net/social-media?retryWrites=true&w=majority", {
+        useNewUrlParser:true,
+    
 }, err => {
     if(err) throw err;
     console.log("Database Connected!!")
